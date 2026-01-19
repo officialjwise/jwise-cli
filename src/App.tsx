@@ -8,6 +8,12 @@ import QuickStart from "./pages/docs/QuickStart";
 import Installation from "./pages/docs/Installation";
 import AuthenticationOverview from "./pages/docs/AuthenticationOverview";
 import ApiAuthSignup from "./pages/docs/ApiAuthSignup";
+import ApiAuthLogin from "./pages/docs/ApiAuthLogin";
+import ApiAuthRefresh from "./pages/docs/ApiAuthRefresh";
+import ApiAuthLogout from "./pages/docs/ApiAuthLogout";
+import ApiAuthSessions from "./pages/docs/ApiAuthSessions";
+import ApiEmailVerification from "./pages/docs/ApiEmailVerification";
+import ApiPasswordReset from "./pages/docs/ApiPasswordReset";
 import EmailOverview from "./pages/docs/EmailOverview";
 import SecurityOwasp from "./pages/docs/SecurityOwasp";
 import CliNew from "./pages/docs/CliNew";
@@ -39,6 +45,12 @@ const App = () => (
           <Route path="/docs/deployment/checklist" element={<DeploymentChecklist />} />
           {/* API Reference */}
           <Route path="/docs/api/auth-signup" element={<ApiAuthSignup />} />
+          <Route path="/docs/api/auth-login" element={<ApiAuthLogin />} />
+          <Route path="/docs/api/auth-refresh" element={<ApiAuthRefresh />} />
+          <Route path="/docs/api/auth-logout" element={<ApiAuthLogout />} />
+          <Route path="/docs/api/auth-sessions" element={<ApiAuthSessions />} />
+          <Route path="/docs/api/email-verification" element={<ApiEmailVerification />} />
+          <Route path="/docs/api/password-reset" element={<ApiPasswordReset />} />
           {/* Catch-all */}
           <Route path="*" element={<NotFound />} />
         </Routes>
