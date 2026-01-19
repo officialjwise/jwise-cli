@@ -104,15 +104,15 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <span className="text-foreground">Production-Ready</span>{' '}
-              <span className="gradient-text-cyan">NestJS</span>
+              <span className="text-slate-800 dark:text-white">Production-Ready</span>{' '}
+              <span className="bg-gradient-to-r from-cyan-600 to-teal-500 bg-clip-text text-transparent">NestJS</span>
               <br />
-              <span className="text-foreground">in 30 Seconds</span>
+              <span className="text-slate-800 dark:text-white">in 30 Seconds</span>
             </motion.h1>
 
             {/* Description */}
             <motion.p
-              className="text-lg lg:text-xl text-muted-foreground max-w-xl mb-8"
+              className="text-lg lg:text-xl text-slate-600 dark:text-muted-foreground max-w-xl mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -158,12 +158,12 @@ export function HeroSection() {
               {stats.map((stat) => (
                 <motion.div
                   key={stat.label}
-                  className="flex items-center gap-3 group cursor-default px-3 py-2 rounded-lg bg-white/50 dark:bg-muted/30 border border-border/50 shadow-sm"
+                  className="flex items-center gap-3 group cursor-default px-3 py-2 rounded-lg bg-white/80 dark:bg-muted/30 border border-slate-200 dark:border-border/50 shadow-sm"
                   whileHover={{ scale: 1.05, y: -2 }}
                   transition={{ type: 'spring', stiffness: 400 }}
                 >
                   <stat.icon className={`w-5 h-5 ${stat.color}`} />
-                  <span className="text-sm font-medium text-foreground/80">{stat.label}</span>
+                  <span className="text-sm font-medium text-slate-700 dark:text-foreground/80">{stat.label}</span>
                 </motion.div>
               ))}
             </motion.div>
