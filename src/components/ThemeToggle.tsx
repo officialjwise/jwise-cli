@@ -17,12 +17,18 @@ export function ThemeToggle() {
     const root = document.documentElement;
     
     const applyTheme = (t: Theme) => {
+      // First remove the light class to reset
+      root.classList.remove('light');
+      
       if (t === 'system') {
         const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        root.classList.toggle('light', !systemDark);
-      } else {
-        root.classList.toggle('light', t === 'light');
+        if (!systemDark) {
+          root.classList.add('light');
+        }
+      } else if (t === 'light') {
+        root.classList.add('light');
       }
+      // For 'dark', we just leave light class removed (default is dark)
     };
 
     applyTheme(theme);
