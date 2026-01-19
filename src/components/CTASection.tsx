@@ -69,7 +69,7 @@ export function CTASection() {
             <Button 
               size="lg" 
               variant="outline"
-              className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
+              className="border-white/50 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm font-medium"
               onClick={() => navigate('/docs/getting-started/quick-start')}
             >
               Read Documentation
