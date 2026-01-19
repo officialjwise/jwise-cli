@@ -4,8 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
-
 // Getting Started
 import Installation from "./pages/docs/Installation";
 import QuickStart from "./pages/docs/QuickStart";
@@ -109,6 +109,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/blog" element={<Blog />} />
           
           {/* Getting Started */}
           <Route path="/docs/getting-started/installation" element={<Installation />} />
