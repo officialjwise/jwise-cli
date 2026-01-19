@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Github, Menu, X, Command } from 'lucide-react';
+import { Github, Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { CommandPalette } from './CommandPalette';
+import { ThemeToggle } from './ThemeToggle';
 
 const navLinks = [
   { label: 'Docs', href: '/docs/getting-started/quick-start' },
@@ -50,6 +51,9 @@ export function Header() {
           <div className="flex items-center gap-3">
             {/* Search Button - Now uses CommandPalette */}
             <CommandPalette />
+
+            {/* Theme Toggle */}
+            <ThemeToggle />
 
             {/* GitHub */}
             <a
