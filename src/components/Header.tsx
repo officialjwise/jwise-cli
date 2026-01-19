@@ -18,18 +18,18 @@ export function Header() {
   const navigate = useNavigate();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="container">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 rounded-lg hero-gradient flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 flex items-center justify-center shadow-lg shadow-cyan-500/25">
               <span className="text-white font-bold text-lg">J</span>
             </div>
-            <span className="font-bold text-lg text-foreground group-hover:text-accent transition-colors">
+            <span className="font-bold text-lg text-foreground group-hover:text-cyan-400 transition-colors">
               jwise
             </span>
-            <span className="hidden sm:inline text-xs px-2 py-0.5 rounded-full bg-accent/10 text-accent font-medium">
+            <span className="hidden sm:inline text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 font-medium border border-cyan-500/20">
               v1.0.0
             </span>
           </a>
@@ -67,9 +67,8 @@ export function Header() {
 
             {/* CTA */}
             <Button 
-              variant="default" 
               size="sm" 
-              className="hidden sm:flex"
+              className="hidden sm:flex bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-white shadow-lg shadow-cyan-500/25"
               onClick={() => navigate('/docs/getting-started/quick-start')}
             >
               Get Started
@@ -107,7 +106,7 @@ export function Header() {
               ))}
               <div className="pt-4">
                 <Button 
-                  className="w-full" 
+                  className="w-full bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-white" 
                   size="lg"
                   onClick={() => navigate('/docs/getting-started/quick-start')}
                 >
