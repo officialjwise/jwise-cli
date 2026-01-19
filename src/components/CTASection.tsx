@@ -57,24 +57,24 @@ export function CTASection() {
           <p className="text-lg lg:text-xl text-white/80 mb-10">
             Join hundreds of developers who ship production-ready NestJS backends faster with jwise CLI.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-white text-blue-600 hover:bg-white/90 font-semibold shadow-xl group"
-              onClick={() => navigate('/docs/getting-started/quick-start')}
-            >
-              Get Started for Free
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="border-white/50 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm font-medium"
-              onClick={() => navigate('/docs/getting-started/quick-start')}
-            >
-              Read Documentation
-            </Button>
-          </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                variant="hero"
+                className="group"
+                onClick={() => navigate('/docs/getting-started/quick-start')}
+              >
+                Get Started for Free
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button 
+                size="lg" 
+                variant="heroOutline"
+                onClick={() => navigate('/docs/getting-started/quick-start')}
+              >
+                Read Documentation
+              </Button>
+            </div>
         </motion.div>
       </div>
     </section>
