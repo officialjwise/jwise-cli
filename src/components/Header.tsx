@@ -26,10 +26,10 @@ export function Header() {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 flex items-center justify-center shadow-lg shadow-cyan-500/25">
               <span className="text-white font-bold text-lg">J</span>
             </div>
-            <span className="font-bold text-lg text-foreground group-hover:text-cyan-400 transition-colors">
-              jwise
+            <span className="font-bold text-lg text-foreground group-hover:text-cyan-500 transition-colors">
+              jwise-cli
             </span>
-            <span className="hidden sm:inline text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 font-medium border border-cyan-500/20">
+            <span className="hidden sm:inline text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 font-medium border border-cyan-500/20">
               v1.0.0
             </span>
           </a>
@@ -57,7 +57,7 @@ export function Header() {
 
             {/* GitHub */}
             <a
-              href="https://github.com/jwise/cli"
+              href="https://github.com/officialjwise"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"

@@ -125,7 +125,7 @@ export function FounderSection() {
                 <span>GitHub</span>
               </a>
               <a
-                href="https://linkedin.com/in/danielamoakokodua"
+                href="https://www.linkedin.com/in/daniel-amoako-kodua-4b4174240/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 text-white hover:from-cyan-400 hover:to-teal-400 transition-colors"

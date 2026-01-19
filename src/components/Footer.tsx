@@ -108,7 +108,7 @@ export function Footer() {
               >
                 <span className="text-white font-bold text-xl">J</span>
               </motion.div>
-              <span className="font-bold text-xl text-foreground group-hover:text-cyan-400 transition-colors">jwise</span>
+              <span className="font-bold text-xl text-foreground group-hover:text-cyan-400 transition-colors">jwise-cli</span>
             </Link>
             <p className="text-sm text-muted-foreground mb-6">
               Production-ready NestJS backends in 30 seconds. Built by developers, for developers.
@@ -234,7 +234,7 @@ export function Footer() {
           viewport={{ once: true }}
         >
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            © {new Date().getFullYear()} jwise. Made with 
+            © {new Date().getFullYear()} jwise-cli. Made with
             <motion.span
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity }}

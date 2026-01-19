@@ -1,68 +1,42 @@
 import { motion } from 'framer-motion';
-import { Star, MessageSquare } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { Star, MessageSquare, Code2, Terminal, Shield, Rocket } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Alex Chen',
-    role: 'Senior Backend Developer',
-    company: 'TechFlow',
-    avatar: 'AC',
-    content: "jwise saved me an entire week of setup time. The auth module is exactly what I would've built myself, but better documented.",
+    name: 'Francis Amponsah',
+    role: 'Full Stack Developer',
+    company: 'Tech Innovators',
+    avatar: 'FA',
+    content: "jwise-cli saved me an entire week of setup time. The auth module is exactly what I would've built myself, but better documented and more secure.",
     rating: 5,
   },
   {
-    name: 'Sarah Johnson',
-    role: 'Full Stack Engineer',
-    company: 'StartupXYZ',
-    avatar: 'SJ',
-    content: "Finally, a CLI that understands what production-ready actually means. The security defaults are chef's kiss.",
+    name: 'Jeff Konadu Sarpong',
+    role: 'Backend Developer',
+    company: 'CloudTech Solutions',
+    avatar: 'JK',
+    content: "Finally, a CLI that understands what production-ready actually means. The security defaults are chef's kiss. No more security audits failing!",
     rating: 5,
   },
   {
-    name: 'Marcus Williams',
-    role: 'Tech Lead',
-    company: 'DevStudio',
-    avatar: 'MW',
-    content: "We've standardized on jwise for all our NestJS projects. Consistent architecture, less review time, happier team.",
+    name: 'Stephen Selorm Bedzrah',
+    role: 'Backend Developer',
+    company: 'DevFlow',
+    avatar: 'SS',
+    content: "We've standardized on jwise-cli for all our NestJS projects. Consistent architecture, less review time, happier team. Absolute game changer.",
     rating: 5,
   },
   {
-    name: 'Emily Rodriguez',
-    role: 'Backend Architect',
-    company: 'CloudScale',
-    avatar: 'ER',
-    content: "The email verification and password reset flows are exactly what every project needs. No more reinventing the wheel.",
-    rating: 5,
-  },
-  {
-    name: 'David Kim',
-    role: 'Solo Founder',
-    company: 'IndieHacker',
-    avatar: 'DK',
-    content: "As a solo developer, jwise is like having a senior engineer set up my project. Incredible time saver.",
-    rating: 5,
-  },
-  {
-    name: 'Priya Patel',
+    name: 'Asher Tetteh Yram',
     role: 'DevOps Engineer',
-    company: 'InfraTeam',
-    avatar: 'PP',
-    content: "The Docker and deployment configs generated are actually usable in production. Rare for a scaffolding tool.",
+    company: 'AmaliTech',
+    avatar: 'AT',
+    content: "The Docker and deployment configs generated are actually usable in production. Rare for a scaffolding tool. This is how CLI tools should be built.",
     rating: 5,
   },
 ];
 
 export function TestimonialsSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Animated gradient background */}
@@ -85,28 +59,28 @@ export function TestimonialsSection() {
         />
       </div>
 
-      {/* Floating stars */}
+      {/* Floating code symbols */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(15)].map((_, i) => (
+        {[Code2, Terminal, Shield, Rocket, Star].map((Icon, i) => (
           <motion.div
             key={i}
             className="absolute"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${15 + i * 18}%`,
+              top: `${20 + (i % 3) * 25}%`,
             }}
             animate={{
               y: [0, -20, 0],
-              opacity: [0.2, 0.6, 0.2],
-              rotate: [0, 180, 360],
+              opacity: [0.1, 0.3, 0.1],
+              rotate: [0, 10, -10, 0],
             }}
             transition={{
-              duration: 4 + Math.random() * 3,
+              duration: 4 + i,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: i * 0.5,
             }}
           >
-            <Star className="w-3 h-3 text-yellow-500/40" fill="currentColor" />
+            <Icon className="w-6 h-6 text-cyan-500/30" />
           </motion.div>
         ))}
       </div>
@@ -119,74 +93,62 @@ export function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 text-yellow-400">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 text-yellow-600 dark:text-yellow-400">
             <MessageSquare className="w-4 h-4" />
             <span>Developer Love</span>
           </div>
           
           <h2 className="text-3xl lg:text-5xl font-bold mb-6">
             <span className="text-foreground">Trusted by</span>{' '}
-            <span className="gradient-text-cyan">Developers Worldwide</span>
+            <span className="gradient-text-cyan">Top Developers</span>
           </h2>
           
           <p className="text-lg text-muted-foreground">
-            Join hundreds of developers who've reclaimed their time with jwise.
+            Join the growing community of developers who've reclaimed their time with jwise-cli.
           </p>
         </motion.div>
 
-        {/* Testimonials carousel - infinite scroll effect */}
-        <div className="relative">
-          {/* Gradient masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
-          
-          {/* Scrolling container */}
-          <div className="overflow-hidden">
+        {/* Testimonials grid */}
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {testimonials.map((testimonial, index) => (
             <motion.div
-              className="flex gap-6"
-              animate={{
-                x: [0, -1920],
-              }}
-              transition={{
-                duration: 30,
-                repeat: Infinity,
-                ease: 'linear',
-              }}
+              key={testimonial.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="group"
             >
-              {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
-                <motion.div
-                  key={index}
-                  className="flex-shrink-0 w-[400px]"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 h-full hover:border-cyan-500/30 transition-colors">
-                    {/* Rating */}
-                    <div className="flex gap-1 mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-yellow-500" fill="currentColor" />
-                      ))}
-                    </div>
-                    
-                    {/* Content */}
-                    <p className="text-foreground mb-6">"{testimonial.content}"</p>
-                    
-                    {/* Author */}
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-r from-cyan-500 to-teal-500 flex items-center justify-center text-white font-semibold text-sm">
-                        {testimonial.avatar}
-                      </div>
-                      <div>
-                        <p className="font-medium text-foreground">{testimonial.name}</p>
-                        <p className="text-sm text-muted-foreground">
-                          {testimonial.role} at {testimonial.company}
-                        </p>
-                      </div>
-                    </div>
+              <div className="bg-card/80 dark:bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 h-full hover:border-cyan-500/30 hover:shadow-lg hover:shadow-cyan-500/5 transition-all duration-300">
+                {/* Rating */}
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-yellow-500" fill="currentColor" />
+                  ))}
+                </div>
+                
+                {/* Content */}
+                <p className="text-foreground mb-6 leading-relaxed">"{testimonial.content}"</p>
+                
+                {/* Author */}
+                <div className="flex items-center gap-3">
+                  <motion.div 
+                    className="w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-teal-500 flex items-center justify-center text-white font-semibold shadow-lg"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    {testimonial.avatar}
+                  </motion.div>
+                  <div>
+                    <p className="font-semibold text-foreground">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {testimonial.role} at {testimonial.company}
+                    </p>
                   </div>
-                </motion.div>
-              ))}
+                </div>
+              </div>
             </motion.div>
-          </div>
+          ))}
         </div>
 
         {/* Stats */}
@@ -197,18 +159,18 @@ export function TestimonialsSection() {
           viewport={{ once: true }}
         >
           {[
-            { value: '500+', label: 'Projects Generated' },
-            { value: '50+', label: 'Beta Testers' },
+            { value: '50+', label: 'Projects Generated' },
+            { value: '15+', label: 'Beta Testers' },
             { value: '2-3 days', label: 'Saved Per Project' },
             { value: '100%', label: 'Open Source' },
-          ].map((stat, index) => (
+          ].map((stat) => (
             <motion.div
               key={stat.label}
-              className="text-center"
-              whileHover={{ scale: 1.05 }}
+              className="text-center p-4 rounded-xl bg-card/30 dark:bg-card/20 border border-border/30"
+              whileHover={{ scale: 1.05, backgroundColor: 'hsl(var(--card) / 0.5)' }}
             >
               <p className="text-3xl lg:text-4xl font-bold gradient-text-cyan mb-2">{stat.value}</p>
-              <p className="text-muted-foreground">{stat.label}</p>
+              <p className="text-muted-foreground text-sm">{stat.label}</p>
             </motion.div>
           ))}
         </motion.div>
