@@ -1,17 +1,20 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Github, Menu, X, Command } from 'lucide-react';
 import { Button } from './ui/button';
+import { CommandPalette } from './CommandPalette';
 
 const navLinks = [
-  { label: 'Docs', href: '/docs' },
-  { label: 'API', href: '/api' },
-  { label: 'Examples', href: '/examples' },
-  { label: 'CLI', href: '/cli' },
+  { label: 'Docs', href: '/docs/getting-started/quick-start' },
+  { label: 'API', href: '/docs/api/auth-signup' },
+  { label: 'Examples', href: '/docs/examples/basic-auth' },
+  { label: 'CLI', href: '/docs/cli/new' },
 ];
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/50">
@@ -45,14 +48,8 @@ export function Header() {
 
           {/* Right Section */}
           <div className="flex items-center gap-3">
-            {/* Search Button */}
-            <button className="hidden md:flex items-center gap-3 px-4 py-2 text-sm text-muted-foreground bg-muted/50 rounded-lg border border-border hover:border-accent/50 hover:bg-muted transition-all">
-              <Search className="w-4 h-4" />
-              <span>Search docs...</span>
-              <kbd className="flex items-center gap-1 px-1.5 py-0.5 text-xs bg-background rounded border border-border">
-                <Command className="w-3 h-3" />K
-              </kbd>
-            </button>
+            {/* Search Button - Now uses CommandPalette */}
+            <CommandPalette />
 
             {/* GitHub */}
             <a
@@ -65,7 +62,12 @@ export function Header() {
             </a>
 
             {/* CTA */}
-            <Button variant="default" size="sm" className="hidden sm:flex">
+            <Button 
+              variant="default" 
+              size="sm" 
+              className="hidden sm:flex"
+              onClick={() => navigate('/docs/getting-started/quick-start')}
+            >
               Get Started
             </Button>
 
@@ -100,7 +102,11 @@ export function Header() {
                 </a>
               ))}
               <div className="pt-4">
-                <Button className="w-full" size="lg">
+                <Button 
+                  className="w-full" 
+                  size="lg"
+                  onClick={() => navigate('/docs/getting-started/quick-start')}
+                >
                   Get Started
                 </Button>
               </div>
